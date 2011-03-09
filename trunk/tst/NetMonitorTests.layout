@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="CMakeLists.txt" open="1" top="1" tabpos="3">
+		<Cursor position="276" topLine="0" />
+	</File>
+	<File name="CaptureOutputTests.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="502" topLine="0" />
+	</File>
+	<File name="DateFilterTests.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="202" topLine="0" />
+	</File>
+	<File name="IPVersionFilterTests.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="241" topLine="0" />
+	</File>
+	<File name="LinuxPipeTests.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="320" topLine="0" />
+	</File>
+	<File name="PacketLenghtFilterTests.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="785" topLine="0" />
+	</File>
+	<File name="SourceIpFilterTests.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="885" topLine="0" />
+	</File>
+	<File name="TcpdumpTests.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="207" topLine="0" />
+	</File>
+	<File name="TimeFilterTests.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="460" topLine="0" />
+	</File>
+	<File name="mainTests.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="177" topLine="0" />
+	</File>
+	<File name="tests.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="0" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>
