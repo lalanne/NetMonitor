@@ -15,6 +15,7 @@ SET(SOURCES
     SourcePortFilterTests.cpp
     DestinationIpFilterTests.cpp
     DestinationPortFilterTests.cpp
+    FileStorageTests.cpp
     ../src/Tcpdump.cpp
     ../src/CaptureOutput.cpp
     ../src/LinuxPipe.cpp
@@ -36,6 +37,8 @@ SET(SOURCES
     ../src/DestinationIp.cpp
     ../src/DestinationPortFilter.cpp
     ../src/DestinationPort.cpp
+    ../src/FileStorage.cpp
+    ../src/Register.cpp
 )
 
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})

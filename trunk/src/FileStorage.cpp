@@ -9,6 +9,7 @@ FileStorage::FileStorage(string fileName) : fileName(fileName)
 
 void FileStorage::open()
 {
+    printf("loco          \n");
     file.open(fileName.c_str());
 }
 
