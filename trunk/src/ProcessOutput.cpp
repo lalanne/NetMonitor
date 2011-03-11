@@ -3,19 +3,12 @@
 #include "Date.hpp"
 #include "DateFilter.hpp"
 #include "Time.hpp"
-#include "TimeFilter.hpp"
 #include "IPVersion.hpp"
-#include "IPVersionFilter.hpp"
 #include "PacketLenght.hpp"
-#include "PacketLenghtFilter.hpp"
 #include "SourceIp.hpp"
-#include "SourceIpFilter.hpp"
 #include "SourcePort.hpp"
-#include "SourcePortFilter.hpp"
 #include "DestinationIp.hpp"
-#include "DestinationIpFilter.hpp"
 #include "DestinationPort.hpp"
-#include "DestinationPortFilter.hpp"
 
 #include <string>
 
@@ -23,15 +16,6 @@ using namespace std;
 
 void ProcessOutput::operator()(CaptureOutput& captureOutput)
 {
-    DateFilter dateFilter;
-    TimeFilter timeFilter;
-    IPVersionFilter ipVersionFilter;
-    PacketLenghtFilter packetLenghtFilter;
-    SourceIpFilter sourceIpFilter;
-    SourcePortFilter sourcePortFilter;
-    DestinationIpFilter destinationIpFilter;
-    DestinationPortFilter destinationPortFilter;
-
     while(true)
     {
         string line = captureOutput.getLine();

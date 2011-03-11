@@ -42,10 +42,14 @@
 		<Unit filename="CMakeLists.txt" />
 		<Unit filename="CaptureOutputTests.cpp" />
 		<Unit filename="DateFilterTests.cpp" />
+		<Unit filename="DestinationIpFilterTests.cpp" />
+		<Unit filename="DestinationPortFilterTests.cpp" />
+		<Unit filename="FileStorage.cpp" />
 		<Unit filename="IPVersionFilterTests.cpp" />
 		<Unit filename="LinuxPipeTests.cpp" />
 		<Unit filename="PacketLenghtFilterTests.cpp" />
 		<Unit filename="SourceIpFilterTests.cpp" />
+		<Unit filename="SourcePortFilterTests.cpp" />
 		<Unit filename="TcpdumpTests.cpp" />
 		<Unit filename="TimeFilterTests.cpp" />
 		<Unit filename="mainTests.cpp" />
