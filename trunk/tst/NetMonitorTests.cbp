@@ -44,7 +44,7 @@
 		<Unit filename="DateFilterTests.cpp" />
 		<Unit filename="DestinationIpFilterTests.cpp" />
 		<Unit filename="DestinationPortFilterTests.cpp" />
-		<Unit filename="FileStorage.cpp" />
+		<Unit filename="FileStorageTests.cpp" />
 		<Unit filename="IPVersionFilterTests.cpp" />
 		<Unit filename="LinuxPipeTests.cpp" />
 		<Unit filename="PacketLenghtFilterTests.cpp" />
@@ -52,7 +52,11 @@
 		<Unit filename="SourcePortFilterTests.cpp" />
 		<Unit filename="TcpdumpTests.cpp" />
 		<Unit filename="TimeFilterTests.cpp" />
+		<Unit filename="include/CaptureCommandFake.hpp" />
+		<Unit filename="include/CaptureCommandMock.hpp" />
+		<Unit filename="include/LineExamples.hpp" />
 		<Unit filename="mainTests.cpp" />
+		<Unit filename="src/LineExamples.cpp" />
 		<Unit filename="tests.cpp" />
 		<Extensions>
 			<code_completion />
