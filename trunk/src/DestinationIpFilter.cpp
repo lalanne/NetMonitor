@@ -13,7 +13,20 @@ DestinationIp DestinationIpFilter::operator()(const string line)
     tmp2.erase(it);
     string::iterator it1 = tmp2.begin();
     tmp2.erase(it1);
-    const unsigned int found3 = tmp2.rfind(".");
 
-    return DestinationIp(tmp2.substr(0, found3));
+    string unreachable = "unreachable";
+    size_t foundUnreachable = tmp.find(unreachable);
+    if(foundUnreachable != string::npos)
+    {
+        const unsigned int found3 = tmp2.rfind(":");
+
+        return DestinationIp(tmp2.substr(0, found3));
+    }
+    else
+    {
+        const unsigned int found3 = tmp2.rfind(".");
+
+        return DestinationIp(tmp2.substr(0, found3));
+    }
 }
+

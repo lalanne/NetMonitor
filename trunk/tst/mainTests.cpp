@@ -3,6 +3,7 @@
 #include "CaptureCommand.hpp"
 #include "ProcessOutput.hpp"
 #include "Tcpdump.hpp"
+#include "FileStorage.hpp"
 
 #include <gtest/gtest.h>
 
@@ -10,12 +11,15 @@ using namespace std;
 
 TEST(mainTests, mainWithTcpDump)
 {
-    string arguments = "-i eth1 -n -e -tttt -q -l not arp";
-    Tcpdump captureCommand(arguments);
+    string captureCommandArguments = "-i eth1 -n -e -tttt -q -l not arp";
+    Tcpdump captureCommand(captureCommandArguments);
+
     CaptureOutput captureOutput;
     captureOutput(captureCommand);
+
     ProcessOutput processOutput;
-    processOutput(captureOutput);
+    FileStorage storage("test1.txt");
+    processOutput(captureOutput, storage);
 
     EXPECT_EQ(1, 0);
 }

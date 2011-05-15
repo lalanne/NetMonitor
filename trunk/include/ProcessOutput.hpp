@@ -10,11 +10,16 @@
 #include "DestinationIpFilter.hpp"
 #include "DestinationPortFilter.hpp"
 #include "CaptureOutput.hpp"
+#include "FileStorage.hpp"
 
 class ProcessOutput
 {
     public:
-        void operator()(CaptureOutput& captureOutput);
+        void operator()(CaptureOutput& captureOutput, FileStorage& storage);
+
+    private:
+        void readingData(CaptureOutput& captureOutput, FileStorage& storage);
+        Register applyDataFilters(std::string line);
 
     private:
         DateFilter dateFilter;

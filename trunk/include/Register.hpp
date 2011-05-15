@@ -1,36 +1,25 @@
 #ifndef REGISTER_HPP_P9HGP9EWHRGIUEWHGRIWEHRG
 #define REGISTER_HPP_P9HGP9EWHRGIUEWHGRIWEHRG
 
-#include "Date.hpp"
-#include "Time.hpp"
-#include "IPVersion.hpp"
-#include "PacketLenght.hpp"
-#include "SourceIp.hpp"
-#include "SourcePort.hpp"
-#include "DestinationIp.hpp"
-#include "DestinationPort.hpp"
+#include "TimeStamp.hpp"
+#include "PacketInformation.hpp"
+#include "TransportInformation.hpp"
 
 class Register
 {
     public:
-        Register(const Date& date,
-                 const Time& time,
-                 const IPVersion& ipVersion,
-                 const PacketLenght& packetLenght,
-                 const SourceIp& sourceIp,
-                 const SourcePort& sourcePort,
-                 const DestinationIp& destinationIp,
-                 const DestinationPort& destinationPort);
+        Register(TimeStamp timeStamp,
+                PacketInformation packetInformation,
+                TransportInformation transportInformation);
+
+        TimeStamp getTimeStamp() const;
+        PacketInformation getPacketInformation() const;
+        TransportInformation getTransportInformation() const;
 
     private:
-        const Date& date;
-        const Time& time;
-        const IPVersion& ipVersion;
-        const PacketLenght& packetLenght;
-        const SourceIp& sourceIp;
-        const SourcePort& sourcePort;
-        const DestinationIp& destinationIp;
-        const DestinationPort& destinationPort;
+        TimeStamp timeStamp;
+        PacketInformation packetInformation;
+        TransportInformation transportInformation;
 };
 
 #endif // REGISTER_HPP_P9HGP9EWHRGIUEWHGRIWEHRG

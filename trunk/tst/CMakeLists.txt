@@ -16,6 +16,7 @@ SET(SOURCES
     DestinationIpFilterTests.cpp
     DestinationPortFilterTests.cpp
     FileStorageTests.cpp
+    src/LineExamples.cpp
     ../src/Tcpdump.cpp
     ../src/CaptureOutput.cpp
     ../src/LinuxPipe.cpp
@@ -39,11 +40,17 @@ SET(SOURCES
     ../src/DestinationPort.cpp
     ../src/FileStorage.cpp
     ../src/Register.cpp
+    ../src/TransportSourceInformation.cpp
+    ../src/TransportDestinationInformation.cpp
+    ../src/TransportInformation.cpp
+    ../src/PacketInformation.cpp
+    ../src/TimeStamp.cpp
 )
 
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})
 
 INCLUDE_DIRECTORIES(../include/)
+INCLUDE_DIRECTORIES(include/)
 
 TARGET_LINK_LIBRARIES(${BINARY_NAME} pthread)
 TARGET_LINK_LIBRARIES(${BINARY_NAME} gtest )

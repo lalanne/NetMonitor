@@ -9,6 +9,10 @@ class DestinationPortFilter
 {
     public:
         DestinationPort operator()(const std::string line);
+
+    private:
+        std::string removeUntilLenght(std::string line);
+        int numberOfStringInStream(std::string stream, std::string line);
 };
 
 #endif // DESTINATIONPORTFILTER_HPP_WIEURHEHRG8R9G834593845
