@@ -3,8 +3,17 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="NetMonitor" />
+		<Option makefile_is_custom="1" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<MakeCommands>
+			<Build command="make" />
+			<CompileFile command="make" />
+			<Clean command="make clean" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="make clean" />
+			<SilentBuild command="make" />
+		</MakeCommands>
 		<Build>
 			<Target title="Release">
 				<Option output="NetMonitor" prefix_auto="1" extension_auto="1" />
@@ -17,6 +26,14 @@
 				<Linker>
 					<Add option="-s" />
 				</Linker>
+				<MakeCommands>
+					<Build command="make " />
+					<CompileFile command="make " />
+					<Clean command="make clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="make clean" />
+					<SilentBuild command="make" />
+				</MakeCommands>
 			</Target>
 		</Build>
 		<Compiler>
@@ -31,6 +48,7 @@
 		<Unit filename="include/DestinationIpFilter.hpp" />
 		<Unit filename="include/DestinationPort.hpp" />
 		<Unit filename="include/DestinationPortFilter.hpp" />
+		<Unit filename="include/FileStorage.hpp" />
 		<Unit filename="include/GetStringFromStream.hpp" />
 		<Unit filename="include/IPVersion.hpp" />
 		<Unit filename="include/IPVersionFilter.hpp" />
@@ -38,6 +56,7 @@
 		<Unit filename="include/PacketLenght.hpp" />
 		<Unit filename="include/PacketLenghtFilter.hpp" />
 		<Unit filename="include/ProcessOutput.hpp" />
+		<Unit filename="include/Register.hpp" />
 		<Unit filename="include/SourceIp.hpp" />
 		<Unit filename="include/SourceIpFilter.hpp" />
 		<Unit filename="include/SourcePort.hpp" />
@@ -45,6 +64,9 @@
 		<Unit filename="include/Tcpdump.hpp" />
 		<Unit filename="include/Time.hpp" />
 		<Unit filename="include/TimeFilter.hpp" />
+		<Unit filename="include/TimeStamp.hpp" />
+		<Unit filename="include/TransportDestinationInformation.hpp" />
+		<Unit filename="include/TransportSourceInformation.hpp" />
 		<Unit filename="src/CaptureOutput.cpp" />
 		<Unit filename="src/Date.cpp" />
 		<Unit filename="src/DateFilter.cpp" />
@@ -52,6 +74,7 @@
 		<Unit filename="src/DestinationIpFilter.cpp" />
 		<Unit filename="src/DestinationPort.cpp" />
 		<Unit filename="src/DestinationPortFilter.cpp" />
+		<Unit filename="src/FileStorage.cpp" />
 		<Unit filename="src/GetStringFromStream.cpp" />
 		<Unit filename="src/IPVersion.cpp" />
 		<Unit filename="src/IPVersionFilter.cpp" />
@@ -59,6 +82,7 @@
 		<Unit filename="src/PacketLenght.cpp" />
 		<Unit filename="src/PacketLenghtFilter.cpp" />
 		<Unit filename="src/ProcessOutput.cpp" />
+		<Unit filename="src/Register.cpp" />
 		<Unit filename="src/SourceIp.cpp" />
 		<Unit filename="src/SourceIpFilter.cpp" />
 		<Unit filename="src/SourcePort.cpp" />
@@ -66,6 +90,10 @@
 		<Unit filename="src/Tcpdump.cpp" />
 		<Unit filename="src/Time.cpp" />
 		<Unit filename="src/TimeFilter.cpp" />
+		<Unit filename="src/TimeStamp.cpp" />
+		<Unit filename="src/TransportDestinationInformation.cpp" />
+		<Unit filename="src/TransportSourceInformation.cpp" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
