@@ -13,7 +13,16 @@ SourceIp SourceIpFilter::operator()(const string line)
     tmp2.erase(it);
     const unsigned int found2 = tmp2.find_first_of(" ");
     string tmp3 = tmp2.substr(0, (found2));
-    const unsigned int found3 = tmp3.rfind(".");
-
-    return SourceIp(tmp3.substr(0, found3));
+    string unreachable = "unreachable";
+    size_t foundUnreachable = tmp.find(unreachable);
+    if(foundUnreachable != string::npos)
+    {
+        const unsigned int found3 = tmp3.rfind(":");
+        return SourceIp(tmp3.substr(0, found3));
+    }
+    else
+    {
+        const unsigned int found3 = tmp3.rfind(".");
+        return SourceIp(tmp3.substr(0, found3));
+    }
 }

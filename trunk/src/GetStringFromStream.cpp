@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const unsigned int CAPTURE_LENGHT = 500;
+static const unsigned int CAPTURE_LENGHT = 500;
 
 string GetStringFromStream::operator()(LinuxPipe& pipe) const
 {

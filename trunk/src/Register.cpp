@@ -1,22 +1,26 @@
 #include "Register.hpp"
 
-Register::Register(const Date& date,
-                const Time& time,
-                const IPVersion& ipVersion,
-                const PacketLenght& packetLenght,
-                const SourceIp& sourceIp,
-                const SourcePort& sourcePort,
-                const DestinationIp& destinationIp,
-                const DestinationPort& destinationPort) :
-                date(date),
-                time(time),
-                ipVersion(ipVersion),
-                packetLenght(packetLenght),
-                sourceIp(sourceIp),
-                sourcePort(sourcePort),
-                destinationIp(destinationIp),
-                destinationPort(destinationPort)
+Register::Register(TimeStamp timeStamp,
+                PacketInformation packetInformation,
+                TransportInformation transportInformation) :
+                timeStamp(timeStamp),
+                packetInformation(packetInformation),
+                transportInformation(transportInformation)
 {
+}
 
+TimeStamp Register::getTimeStamp() const
+{
+    return timeStamp;
+}
+
+PacketInformation Register::getPacketInformation() const
+{
+    return packetInformation;
+}
+
+TransportInformation Register::getTransportInformation() const
+{
+    return transportInformation;
 }
 
