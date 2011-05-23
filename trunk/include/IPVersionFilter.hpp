@@ -8,7 +8,7 @@
 class IPVersionFilter
 {
     public:
-        IPVersion operator()(const std::string line);
+        IPVersion apply(const std::string line);
 };
 
 #endif // IPVERSIONFILTER_HPP_WPE9HGPWERHGII

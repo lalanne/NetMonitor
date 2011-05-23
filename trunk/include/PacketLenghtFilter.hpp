@@ -6,7 +6,7 @@
 class PacketLenghtFilter
 {
     public:
-        PacketLenght operator()(const std::string line);
+        PacketLenght apply(const std::string line);
 };
 
 #endif // PACKETLENGHTFILTER_HPP_WPE98GJ9WEJG9WEJRG

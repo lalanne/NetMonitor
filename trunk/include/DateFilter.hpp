@@ -8,7 +8,7 @@
 class DateFilter
 {
     public:
-        Date operator()(const std::string line);
+        Date apply(const std::string line);
 };
 
 #endif // DATEFILTER_HPP_PW9E8HG9EWHRG9EHG

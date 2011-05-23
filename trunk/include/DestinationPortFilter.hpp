@@ -2,17 +2,20 @@
 #define DESTINATIONPORTFILTER_HPP_WIEURHEHRG8R9G834593845
 
 #include "DestinationPort.hpp"
+#include "DestinationFilter.hpp"
 
 #include <string>
 
 class DestinationPortFilter
 {
     public:
-        DestinationPort operator()(const std::string line);
+        DestinationPort apply(const std::string line);
 
     private:
-        std::string removeUntilLenght(std::string line);
-        int numberOfStringInStream(std::string stream, std::string line);
+        virtual std::string getDestinationPort(const std::string line) const;
+
+    private:
+        DestinationFilter destinationFilter;
 };
 
 #endif // DESTINATIONPORTFILTER_HPP_WIEURHEHRG8R9G834593845

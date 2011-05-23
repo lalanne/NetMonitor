@@ -8,7 +8,7 @@
 class SourcePortFilter
 {
     public:
-        SourcePort operator()(const std::string line);
+        SourcePort apply(const std::string line);
 };
 
 #endif // SOURCEPORTFILTER_HPP_W08R7EHF9WE8HRGWEHRN

@@ -8,7 +8,7 @@
 class TimeFilter
 {
     public:
-        Time operator()(const std::string line);
+        Time apply(const std::string line);
 };
 
 #endif // TIMEFILTER_HPP_PWERPGHWEROIGHERIHG
