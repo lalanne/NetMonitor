@@ -2,7 +2,7 @@
 
 using namespace std;
 
-PacketLenght PacketLenghtFilter::operator()(const string line)
+PacketLenght PacketLenghtFilter::apply(const string line)
 {
     string tmp = line.substr(79);
     const unsigned int found = tmp.find(":");

@@ -1,6 +1,7 @@
 
 #include "ProcessOutput.hpp"
 #include "DateFilter.hpp"
+#include "FilterFactory.hpp"
 
 #include <string>
 
@@ -25,12 +26,15 @@ void ProcessOutput::readingData(CaptureOutput& captureOutput, FileStorage& stora
 
 Register ProcessOutput::applyDataFilters(string line)
 {
-    Register data(TimeStamp(Date(dateFilter(line)), Time(timeFilter(line))),
-                PacketInformation(IPVersion(ipVersionFilter(line)), PacketLenght(packetLenghtFilter(line))),
-                TransportInformation(TransportDestinationInformation(DestinationIp(destinationIpFilter(line)),
-                                                                    DestinationPort(destinationPortFilter(line))),
-                                        TransportSourceInformation(SourceIp(sourceIpFilter(line)),
-                                                                SourcePort(sourcePortFilter(line)))));
+    FilterFactory filterFactory;
+    Register data(TimeStamp(Date((filterFactory.getDateFilter())->apply(line)),
+                            Time((filterFactory.getTimeFilter())->apply(line))),
+                PacketInformation(IPVersion((filterFactory.getIpVersionFilter())->apply(line)),
+                                  PacketLenght((filterFactory.getPacketLenghtFilter())->apply(line))),
+                TransportInformation(TransportDestinationInformation(DestinationIp((filterFactory.getDestinationIpFilter(line))->apply(line)),
+                                                                     DestinationPort((filterFactory.getDestinationPortFilter(line))->apply(line))),
+                                    TransportSourceInformation(SourceIp((filterFactory.getSourceIpFilter())->apply(line)),
+                                                               SourcePort((filterFactory.getSourcePortFilter())->apply(line)))));
     return data;
 }
 

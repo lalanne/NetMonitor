@@ -2,7 +2,7 @@
 
 using namespace std;
 
-IPVersion IPVersionFilter::operator()(const string line)
+IPVersion IPVersionFilter::apply(const string line)
 {
     return IPVersion(line.substr(66, 4));
 }

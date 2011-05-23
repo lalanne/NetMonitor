@@ -2,7 +2,7 @@
 
 using namespace std;
 
-SourcePort SourcePortFilter::operator()(const string line)
+SourcePort SourcePortFilter::apply(const string line)
 {
     string tmp = line.substr(79);
     const unsigned int found = tmp.find(":");

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-SourceIp SourceIpFilter::operator()(const string line)
+SourceIp SourceIpFilter::apply(const string line)
 {
     string tmp = line.substr(79);
     const unsigned int found = tmp.find(":");
