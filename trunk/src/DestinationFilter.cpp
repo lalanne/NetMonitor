@@ -3,17 +3,6 @@
 
 using namespace std;
 
-string DestinationFilter::extractLine(const string line) const
-{
-    return line.substr(79);
-}
-
-string DestinationFilter::getTheStablePartOfTheLine(const string line) const
-{
-    const unsigned int found = line.find(":");
-    return line.substr(found);
-}
-
 string DestinationFilter::getRawDestinationPartOfTheLine(const string line) const
 {
     const unsigned int found = line.find(">");
@@ -37,8 +26,8 @@ string DestinationFilter::getDestinationIpAndPort(const string line) const
 
 string DestinationFilter::getDestinationPartOfTheLine(const string line) const
 {
-    string tmp = extractLine(line);
-    string tmp1 = getTheStablePartOfTheLine(tmp);
+    string tmp = lineFilter.extractLine(line);
+    string tmp1 = lineFilter.getTheStablePartOfTheLine(tmp);
     string tmp2 = getRawDestinationPartOfTheLine(tmp1);
     string tmp3 = eraseTheFrontOfTheDestinationLine(tmp2);
 
