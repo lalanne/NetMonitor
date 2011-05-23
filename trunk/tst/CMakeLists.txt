@@ -36,6 +36,7 @@ SET(SOURCES
     ../src/SourceIpIcmpUnreacheableFilter.cpp
     ../src/SourceIp.cpp
     ../src/SourcePortFilter.cpp
+    ../src/SourcePortIcmpUnreacheableFilter.cpp
     ../src/SourcePort.cpp
     ../src/DestinationFilter.cpp
     ../src/DestinationIpFilter.cpp

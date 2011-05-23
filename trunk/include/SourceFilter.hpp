@@ -6,6 +6,9 @@
 class SourceFilter
 {
     public:
+        std::string getSourcePartOfTheLine(const std::string line) const;
+
+    private:
         std::string extractLine(const std::string line) const;
         std::string getTheStablePartOfTheLine(const std::string line) const;
         std::string getRawSourceAndDestinationPartOfTheLine(const std::string line) const;

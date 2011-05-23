@@ -32,3 +32,12 @@ string SourceFilter::getSourceIpAndPort(const string line) const
     const unsigned int found = line.find_first_of(" ");
     return line.substr(0, (found));
 }
+
+string SourceFilter::getSourcePartOfTheLine(const string line) const
+{
+    string tmp = extractLine(line);
+    string tmp1 = getTheStablePartOfTheLine(tmp);
+    string tmp2 = getRawSourceAndDestinationPartOfTheLine(tmp1);
+    string tmp3 = eraseTheFrontOfTheSourceAndDestinationPartOfTheLine(tmp2);
+    return getSourceIpAndPort(tmp3);
+}

@@ -117,6 +117,7 @@ TEST(FilterFactoryTests, getAndApplySourceIpFilterWithDefaultLine)
     auto_ptr<SourceIpFilter> sourceIpFilter(filterFactory.getSourceIpFilter(LineExamples::line));
     SourceIp sourceIp(sourceIpFilter->apply(LineExamples::line));
 
+
     EXPECT_TRUE(sourceIpExpected == sourceIp);
 }
 

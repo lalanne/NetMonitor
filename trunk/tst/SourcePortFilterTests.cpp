@@ -2,6 +2,7 @@
 #include "LineExamples.hpp"
 
 #include "SourcePortFilter.hpp"
+#include "SourcePortIcmpUnreacheableFilter.hpp"
 #include "SourcePort.hpp"
 
 #include <gtest/gtest.h>
@@ -39,7 +40,7 @@ TEST(SourcePortFilterTests, appliedFilterToIPv4LineWith4CharactersLenght)
 TEST(SourcePortFilterTests, appliedFilterToIcmpUnreachableLine)
 {
     SourcePort sourcePortExpected(LineExamples::sourcePortLineIcmpUnreacheable);
-    SourcePortFilter filter;
+    SourcePortIcmpUnreacheableFilter filter;
     SourcePort sourcePortActual = filter.apply(LineExamples::lineIcmpUnreacheable);
 
     EXPECT_TRUE(sourcePortExpected==sourcePortActual);
