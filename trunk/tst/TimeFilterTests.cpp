@@ -11,9 +11,9 @@ using namespace std;
 
 TEST(TimeFilterTests, appliedFilterToIPv4Line)
 {
-    Time timeExpected("17:34:35.785128");
+    Time timeExpected(LineExamples::timeLine);
     TimeFilter filter;
-    Time timeActual = filter(LineExamples::line);
+    Time timeActual = filter.apply(LineExamples::line);
 
     EXPECT_TRUE(timeExpected==timeActual);
 }

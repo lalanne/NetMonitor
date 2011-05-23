@@ -20,9 +20,12 @@ SET(SOURCES
     src/SourceIp.cpp
     src/SourcePortFilter.cpp
     src/SourcePort.cpp
+    src/DestinationFilter.cpp
     src/DestinationIpFilter.cpp
+    src/DestinationIpIcmpUnreacheableFilter.cpp
     src/DestinationIp.cpp
     src/DestinationPortFilter.cpp
+    src/DestinationPortIcmpUnreacheableFilter.cpp
     src/DestinationPort.cpp
     src/FileStorage.cpp
     src/Register.cpp
@@ -31,6 +34,7 @@ SET(SOURCES
     src/TimeStamp.cpp
     src/TransportInformation.cpp
     src/PacketInformation.cpp
+    src/FilterFactory.cpp
 )
 
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})

@@ -46,9 +46,11 @@
 		<Unit filename="include/DateFilter.hpp" />
 		<Unit filename="include/DestinationIp.hpp" />
 		<Unit filename="include/DestinationIpFilter.hpp" />
+		<Unit filename="include/DestinationIpIcmpUnreacheableFilter.hpp" />
 		<Unit filename="include/DestinationPort.hpp" />
 		<Unit filename="include/DestinationPortFilter.hpp" />
 		<Unit filename="include/FileStorage.hpp" />
+		<Unit filename="include/FilterFactory.hpp" />
 		<Unit filename="include/GetStringFromStream.hpp" />
 		<Unit filename="include/IPVersion.hpp" />
 		<Unit filename="include/IPVersionFilter.hpp" />
@@ -72,9 +74,11 @@
 		<Unit filename="src/DateFilter.cpp" />
 		<Unit filename="src/DestinationIp.cpp" />
 		<Unit filename="src/DestinationIpFilter.cpp" />
+		<Unit filename="src/DestinationIpIcmpUnreacheableFilter.cpp" />
 		<Unit filename="src/DestinationPort.cpp" />
 		<Unit filename="src/DestinationPortFilter.cpp" />
 		<Unit filename="src/FileStorage.cpp" />
+		<Unit filename="src/FilterFactory.cpp" />
 		<Unit filename="src/GetStringFromStream.cpp" />
 		<Unit filename="src/IPVersion.cpp" />
 		<Unit filename="src/IPVersionFilter.cpp" />

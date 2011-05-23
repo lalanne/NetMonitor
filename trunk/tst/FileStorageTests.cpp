@@ -1,25 +1,31 @@
 
+#include "LineExamples.hpp"
+
 #include "FileStorage.hpp"
 #include "Register.hpp"
 
 #include <gtest/gtest.h>
 
+using namespace std;
+
+static const string FILE_TEST = "test.txt";
+
 TEST(FileStorageTests, open)
 {
-    FileStorage storage("test.txt");
+    FileStorage storage(FILE_TEST);
     EXPECT_NO_THROW(storage.open());
     storage.close();
 }
 
 TEST(FileStorageTests, writeValidRegister)
 {
-    FileStorage storage("test.txt");
-    Register data(TimeStamp(Date("2011-03-07"), Time("17:34:35.785128")),
-                PacketInformation(IPVersion("IPv4"), PacketLenght("890")),
-                TransportInformation(TransportDestinationInformation(DestinationIp("192.168.1.3"),
-                                                                    DestinationPort("55925")),
-                                    TransportSourceInformation(SourceIp("199.59.148.20"),
-                                                            SourcePort("443"))));
+    FileStorage storage(FILE_TEST);
+    Register data(TimeStamp(Date(LineExamples::dateLine), Time(LineExamples::timeLine)),
+                PacketInformation(IPVersion(LineExamples::ipVersion4), PacketLenght(LineExamples::packetLenghtLine)),
+                TransportInformation(TransportDestinationInformation(DestinationIp(LineExamples::destinationIpLine),
+                                                                    DestinationPort(LineExamples::destinationPortLine)),
+                                    TransportSourceInformation(SourceIp(LineExamples::sourceIpLine),
+                                                            SourcePort(LineExamples::sourcePortLine))));
     storage.open();
     Register lineRegister(data);
 

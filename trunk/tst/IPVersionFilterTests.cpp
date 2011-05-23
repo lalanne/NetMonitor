@@ -11,9 +11,9 @@ using namespace std;
 
 TEST(IPVersionFilterTests, appliedFilterToIPv4Line)
 {
-    IPVersion ipVersionExpected("IPv4");
+    IPVersion ipVersionExpected(LineExamples::ipVersion4);
     IPVersionFilter filter;
-    IPVersion ipVersionActual = filter(LineExamples::line);
+    IPVersion ipVersionActual = filter.apply(LineExamples::line);
 
     EXPECT_TRUE(ipVersionExpected==ipVersionActual);
 }

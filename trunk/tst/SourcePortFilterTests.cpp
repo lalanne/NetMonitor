@@ -11,36 +11,36 @@ using namespace std;
 
 TEST(SourcePortFilterTests, appliedFilterToIPv4LineWith2CharactersLenght)
 {
-    SourcePort sourcePortExpected("443");
+    SourcePort sourcePortExpected(LineExamples::sourcePortLineWith2CharactersLenght);
     SourcePortFilter filter;
-    SourcePort sourcePortActual = filter(LineExamples::lineWith2CharactersLenght);
+    SourcePort sourcePortActual = filter.apply(LineExamples::lineWith2CharactersLenght);
 
     EXPECT_TRUE(sourcePortExpected==sourcePortActual);
 }
 
 TEST(SourcePortFilterTests, appliedFilterToIPv4LineWith3CharactersLenght)
 {
-    SourcePort sourcePortExpected("80");
+    SourcePort sourcePortExpected(LineExamples::sourcePortLineWith3CharactersLenght);
     SourcePortFilter filter;
-    SourcePort sourcePortActual = filter(LineExamples::lineWith3CharactersLenght);
+    SourcePort sourcePortActual = filter.apply(LineExamples::lineWith3CharactersLenght);
 
     EXPECT_TRUE(sourcePortExpected==sourcePortActual);
 }
 
 TEST(SourcePortFilterTests, appliedFilterToIPv4LineWith4CharactersLenght)
 {
-    SourcePort sourcePortExpected("1935");
+    SourcePort sourcePortExpected(LineExamples::sourcePortLineWith4CharactersLenght);
     SourcePortFilter filter;
-    SourcePort sourcePortActual = filter(LineExamples::lineWith4CharactersLenght);
+    SourcePort sourcePortActual = filter.apply(LineExamples::lineWith4CharactersLenght);
 
     EXPECT_TRUE(sourcePortExpected==sourcePortActual);
 }
 
 TEST(SourcePortFilterTests, appliedFilterToIcmpUnreachableLine)
 {
-    SourcePort sourcePortExpected("");
+    SourcePort sourcePortExpected(LineExamples::sourcePortLineIcmpUnreacheable);
     SourcePortFilter filter;
-    SourcePort sourcePortActual = filter(LineExamples::lineIcmpUnreacheable);
+    SourcePort sourcePortActual = filter.apply(LineExamples::lineIcmpUnreacheable);
 
     EXPECT_TRUE(sourcePortExpected==sourcePortActual);
 }

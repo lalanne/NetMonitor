@@ -11,27 +11,27 @@ using namespace std;
 
 TEST(PacketLenghtFilterTests, appliedFilterToIPv4LineWith2CharactersLenght)
 {
-    PacketLenght packetLenghtExpected("66");
+    PacketLenght packetLenghtExpected(LineExamples::packetLenghtLineWith2CharactersLenght);
     PacketLenghtFilter filter;
-    PacketLenght packetLenghtActual = filter(LineExamples::lineWith2CharactersLenght);
+    PacketLenght packetLenghtActual = filter.apply(LineExamples::lineWith2CharactersLenght);
 
     EXPECT_TRUE(packetLenghtExpected==packetLenghtActual);
 }
 
 TEST(PacketLenghtFilterTests, appliedFilterToIPv4LineWith3CharactersLenght)
 {
-    PacketLenght packetLenghtExpected("890");
+    PacketLenght packetLenghtExpected(LineExamples::packetLenghtLineWith3CharactersLenght);
     PacketLenghtFilter filter;
-    PacketLenght packetLenghtActual = filter(LineExamples::lineWith3CharactersLenght);
+    PacketLenght packetLenghtActual = filter.apply(LineExamples::lineWith3CharactersLenght);
 
     EXPECT_TRUE(packetLenghtExpected==packetLenghtActual);
 }
 
 TEST(PacketLenghtFilterTests, appliedFilterToIPv4LineWith4CharactersLenght)
 {
-    PacketLenght packetLenghtExpected("1496");
+    PacketLenght packetLenghtExpected(LineExamples::packetLenghtLineWith4CharactersLenght);
     PacketLenghtFilter filter;
-    PacketLenght packetLenghtActual = filter(LineExamples::lineWith4CharactersLenght);
+    PacketLenght packetLenghtActual = filter.apply(LineExamples::lineWith4CharactersLenght);
 
     EXPECT_TRUE(packetLenghtExpected==packetLenghtActual);
 }
