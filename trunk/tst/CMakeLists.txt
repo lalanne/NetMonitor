@@ -16,6 +16,7 @@ SET(SOURCES
     DestinationIpFilterTests.cpp
     DestinationPortFilterTests.cpp
     FileStorageTests.cpp
+    FilterFactoryTests.cpp
     src/LineExamples.cpp
     ../src/Tcpdump.cpp
     ../src/CaptureOutput.cpp
@@ -34,9 +35,12 @@ SET(SOURCES
     ../src/SourceIp.cpp
     ../src/SourcePortFilter.cpp
     ../src/SourcePort.cpp
+    ../src/DestinationFilter.cpp
     ../src/DestinationIpFilter.cpp
+    ../src/DestinationIpIcmpUnreacheableFilter.cpp
     ../src/DestinationIp.cpp
     ../src/DestinationPortFilter.cpp
+    ../src/DestinationPortIcmpUnreacheableFilter.cpp
     ../src/DestinationPort.cpp
     ../src/FileStorage.cpp
     ../src/Register.cpp
@@ -45,6 +49,7 @@ SET(SOURCES
     ../src/TransportInformation.cpp
     ../src/PacketInformation.cpp
     ../src/TimeStamp.cpp
+    ../src/FilterFactory.cpp
 )
 
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})

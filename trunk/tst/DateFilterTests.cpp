@@ -13,7 +13,7 @@ TEST(DatesFilterTests, appliedFilterToIPv4Line)
 {
     Date dateExpected(LineExamples::dateLine);
     DateFilter filter;
-    Date dateActual = filter(LineExamples::line);
+    Date dateActual = filter.apply(LineExamples::line);
 
     EXPECT_TRUE(dateExpected==dateActual);
 }
