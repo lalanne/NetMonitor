@@ -31,6 +31,7 @@ SET(SOURCES
     ../src/IPVersionFilter.cpp
     ../src/PacketLenghtFilter.cpp
     ../src/PacketLenght.cpp
+    ../src/SourceFilter.cpp
     ../src/SourceIpFilter.cpp
     ../src/SourceIp.cpp
     ../src/SourcePortFilter.cpp

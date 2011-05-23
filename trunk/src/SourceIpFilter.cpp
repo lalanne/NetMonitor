@@ -4,9 +4,9 @@ using namespace std;
 
 SourceIp SourceIpFilter::apply(const string line)
 {
-    string tmp = line.substr(79);
-    const unsigned int found = tmp.find(":");
-    string tmp1 = tmp.substr(found);
+    string tmp = sourceFilter.extractLine(line);
+    string tmp1 = sourceFilter.getTheStablePartOfTheLine(tmp);
+
     const unsigned int found1 = tmp1.find(" ");
     string tmp2 = tmp1.substr(found1);
     string::iterator it = tmp2.begin();

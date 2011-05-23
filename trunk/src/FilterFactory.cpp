@@ -51,12 +51,12 @@ auto_ptr<DestinationPortFilter> FilterFactory::getDestinationPortFilter(const st
     }
 }
 
-auto_ptr<SourceIpFilter> FilterFactory::getSourceIpFilter() const
+auto_ptr<SourceIpFilter> FilterFactory::getSourceIpFilter(const std::string line) const
 {
     return auto_ptr<SourceIpFilter>(new SourceIpFilter);
 }
 
-auto_ptr<SourcePortFilter> FilterFactory::getSourcePortFilter() const
+auto_ptr<SourcePortFilter> FilterFactory::getSourcePortFilter(const std::string line) const
 {
     return auto_ptr<SourcePortFilter>(new SourcePortFilter);
 }

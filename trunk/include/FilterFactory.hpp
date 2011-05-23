@@ -21,8 +21,8 @@ class FilterFactory
         std::auto_ptr<PacketLenghtFilter> getPacketLenghtFilter() const;
         std::auto_ptr<DestinationIpFilter> getDestinationIpFilter(const std::string line) const;
         std::auto_ptr<DestinationPortFilter> getDestinationPortFilter(const std::string line) const;
-        std::auto_ptr<SourceIpFilter> getSourceIpFilter() const;
-        std::auto_ptr<SourcePortFilter> getSourcePortFilter() const;
+        std::auto_ptr<SourceIpFilter> getSourceIpFilter(const std::string line) const;
+        std::auto_ptr<SourcePortFilter> getSourcePortFilter(const std::string line) const;
 };
 
 #endif // FILTERFACTORY_HPP_W9ER8HJIEJRGERG

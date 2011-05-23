@@ -33,8 +33,8 @@ Register ProcessOutput::applyDataFilters(string line)
                                   PacketLenght((filterFactory.getPacketLenghtFilter())->apply(line))),
                 TransportInformation(TransportDestinationInformation(DestinationIp((filterFactory.getDestinationIpFilter(line))->apply(line)),
                                                                      DestinationPort((filterFactory.getDestinationPortFilter(line))->apply(line))),
-                                    TransportSourceInformation(SourceIp((filterFactory.getSourceIpFilter())->apply(line)),
-                                                               SourcePort((filterFactory.getSourcePortFilter())->apply(line)))));
+                                    TransportSourceInformation(SourceIp((filterFactory.getSourceIpFilter(line))->apply(line)),
+                                                               SourcePort((filterFactory.getSourcePortFilter(line))->apply(line)))));
     return data;
 }
 
