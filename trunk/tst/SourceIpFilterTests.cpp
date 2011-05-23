@@ -2,6 +2,7 @@
 #include "LineExamples.hpp"
 
 #include "SourceIpFilter.hpp"
+#include "SourceIpIcmpUnreacheableFilter.hpp"
 #include "SourceIp.hpp"
 
 #include <gtest/gtest.h>
@@ -39,7 +40,7 @@ TEST(SourceIpFilterTests, appliedFilterToIPv4LineWith4CharactersLenght)
 TEST(SourceIpFilterTests, appliedFilterToIcmpUnreachableLine)
 {
     SourceIp sourceIpExpected(LineExamples::sourceIpLineIcmpUnreacheable);
-    SourceIpFilter filter;
+    SourceIpIcmpUnreacheableFilter filter;
     SourceIp sourceIpActual = filter.apply(LineExamples::lineIcmpUnreacheable);
 
     EXPECT_TRUE(sourceIpExpected==sourceIpActual);

@@ -12,6 +12,9 @@ class SourceIpFilter
         SourceIp apply(const std::string line);
 
     private:
+        virtual std::string getSourceIp(const std::string line) const;
+
+    private:
         SourceFilter sourceFilter;
 };
 

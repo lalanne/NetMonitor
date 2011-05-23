@@ -2,6 +2,7 @@
 #include "FilterFactory.hpp"
 #include "DestinationIpIcmpUnreacheableFilter.hpp"
 #include "DestinationPortIcmpUnreacheableFilter.hpp"
+#include "SourceIpIcmpUnreacheableFilter.hpp"
 
 using namespace std;
 
@@ -53,7 +54,15 @@ auto_ptr<DestinationPortFilter> FilterFactory::getDestinationPortFilter(const st
 
 auto_ptr<SourceIpFilter> FilterFactory::getSourceIpFilter(const std::string line) const
 {
-    return auto_ptr<SourceIpFilter>(new SourceIpFilter);
+    size_t foundUnreachable = line.find("unreachable");
+    if(foundUnreachable != string::npos)
+    {
+        return auto_ptr<SourceIpFilter>(new SourceIpIcmpUnreacheableFilter);
+    }
+    else
+    {
+        return auto_ptr<SourceIpFilter>(new SourceIpFilter);
+    }
 }
 
 auto_ptr<SourcePortFilter> FilterFactory::getSourcePortFilter(const std::string line) const
