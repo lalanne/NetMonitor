@@ -5,7 +5,16 @@ using namespace std;
 
 string DestinationFilter::getRawDestinationPartOfTheLine(const string line) const
 {
-    return line.substr(line.find(">"));
+    const unsigned int found = line.find(">");
+    if(-1 == found)
+    {
+        return "  erase this";
+    }
+    else
+    {
+        string tmp = line.substr(found);
+        return tmp;
+    }
 }
 
 string DestinationFilter::eraseTheFrontOfTheDestinationLine(string line) const

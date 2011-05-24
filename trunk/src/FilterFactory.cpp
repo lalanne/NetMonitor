@@ -4,6 +4,10 @@
 #include "DestinationPortIcmpUnreacheableFilter.hpp"
 #include "SourceIpIcmpUnreacheableFilter.hpp"
 #include "SourcePortIcmpUnreacheableFilter.hpp"
+#include "DestinationIp802_3Filter.hpp"
+#include "DestinationPort802_3Filter.hpp"
+#include "SourceIp802_3Filter.hpp"
+#include "SourcePort802_3Filter.hpp"
 
 #include <cstdio>
 
@@ -38,7 +42,15 @@ auto_ptr<DestinationIpFilter> FilterFactory::getDestinationIpFilter(const string
     }
     else
     {
-        return auto_ptr<DestinationIpFilter>(new DestinationIpFilter);
+        size_t found802_3 = line.find("802.3");
+        if(found802_3 != string::npos)
+        {
+            return auto_ptr<DestinationIpFilter>(new DestinationIp802_3Filter);
+        }
+        else
+        {
+            return auto_ptr<DestinationIpFilter>(new DestinationIpFilter);
+        }
     }
 }
 
@@ -51,7 +63,15 @@ auto_ptr<DestinationPortFilter> FilterFactory::getDestinationPortFilter(const st
     }
     else
     {
-        return auto_ptr<DestinationPortFilter>(new DestinationPortFilter);
+        size_t found802_3 = line.find("802.3");
+        if(found802_3 != string::npos)
+        {
+            return auto_ptr<DestinationPortFilter>(new DestinationPort802_3Filter);
+        }
+        else
+        {
+            return auto_ptr<DestinationPortFilter>(new DestinationPortFilter);
+        }
     }
 }
 
@@ -64,7 +84,15 @@ auto_ptr<SourceIpFilter> FilterFactory::getSourceIpFilter(const std::string line
     }
     else
     {
-        return auto_ptr<SourceIpFilter>(new SourceIpFilter);
+        size_t found802_3 = line.find("802.3");
+        if(found802_3 != string::npos)
+        {
+            return auto_ptr<SourceIpFilter>(new SourceIp802_3Filter);
+        }
+        else
+        {
+            return auto_ptr<SourceIpFilter>(new SourceIpFilter);
+        }
     }
 }
 
@@ -77,7 +105,15 @@ auto_ptr<SourcePortFilter> FilterFactory::getSourcePortFilter(const std::string 
     }
     else
     {
-        return auto_ptr<SourcePortFilter>(new SourcePortFilter);
+        size_t found802_3 = line.find("802.3");
+        if(found802_3 != string::npos)
+        {
+            return auto_ptr<SourcePortFilter>(new SourcePort802_3Filter);
+        }
+        else
+        {
+            return auto_ptr<SourcePortFilter>(new SourcePortFilter);
+        }
     }
 }
 

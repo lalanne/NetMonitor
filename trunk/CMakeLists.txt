@@ -20,16 +20,20 @@ SET(SOURCES
     src/SourceFilter.cpp
     src/SourceIpFilter.cpp
     src/SourceIpIcmpUnreacheableFilter.cpp
+    src/SourceIp802_3Filter.cpp
     src/SourceIp.cpp
     src/SourcePortFilter.cpp
     src/SourcePortIcmpUnreacheableFilter.cpp
+    src/SourcePort802_3Filter.cpp
     src/SourcePort.cpp
     src/DestinationFilter.cpp
     src/DestinationIpFilter.cpp
     src/DestinationIpIcmpUnreacheableFilter.cpp
+    src/DestinationIp802_3Filter.cpp
     src/DestinationIp.cpp
     src/DestinationPortFilter.cpp
     src/DestinationPortIcmpUnreacheableFilter.cpp
+    src/DestinationPort802_3Filter.cpp
     src/DestinationPort.cpp
     src/FileStorage.cpp
     src/Register.cpp

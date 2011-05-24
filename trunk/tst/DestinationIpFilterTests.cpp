@@ -3,6 +3,7 @@
 
 #include "DestinationIpFilter.hpp"
 #include "DestinationIpIcmpUnreacheableFilter.hpp"
+#include "DestinationIp802_3Filter.hpp"
 #include "DestinationIp.hpp"
 
 #include <gtest/gtest.h>
@@ -46,4 +47,12 @@ TEST(DestinationIpFilterTests, appliedFilterToIPv4IcmpUnreachableLine)
     EXPECT_TRUE(destinationIpExpected==destinationIpActual);
 }
 
+TEST(DestinationIpFilterTests, appliedFilterTo802_3Line)
+{
+    DestinationIp destinationIpExpected(LineExamples::destinationIpLine802_3);
+    DestinationIp802_3Filter filter;
+    DestinationIp destinationIpActual = filter.apply(LineExamples::line802_3);
+
+    EXPECT_TRUE(destinationIpExpected==destinationIpActual);
+}
 

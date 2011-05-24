@@ -3,6 +3,7 @@
 
 #include "DestinationPortFilter.hpp"
 #include "DestinationPortIcmpUnreacheableFilter.hpp"
+#include "DestinationPort802_3Filter.hpp"
 #include "DestinationPort.hpp"
 
 #include <gtest/gtest.h>
@@ -46,4 +47,12 @@ TEST(DestinationPortFilterTests, appliedFilterToIcmpUnreachableLine)
     EXPECT_TRUE(destinationPortExpected==destinationPortActual);
 }
 
+TEST(DestinationPortFilterTests, appliedFilterTo802_3Line)
+{
+    DestinationPort destinationPortExpected(LineExamples::destinationPortLine802_3);
+    DestinationPort802_3Filter filter;
+    DestinationPort destinationPortActual = filter.apply(LineExamples::line802_3);
+
+    EXPECT_TRUE(destinationPortExpected==destinationPortActual);
+}
 

@@ -45,3 +45,7 @@ const string LineExamples::destinationIpLineIcmpUnreacheable = "192.168.1.3";
 const string LineExamples::destinationPortLineIcmpUnreacheable = "";
 const string LineExamples::sourceIpLineIcmpUnreacheable = "192.168.1.1";
 const string LineExamples::sourcePortLineIcmpUnreacheable = "";
+const string LineExamples::destinationIpLine802_3 = "";
+const string LineExamples::destinationPortLine802_3 = "";
+const string LineExamples::sourceIpLine802_3 = "";
+const string LineExamples::sourcePortLine802_3 = "";

@@ -3,6 +3,7 @@
 
 #include "SourcePortFilter.hpp"
 #include "SourcePortIcmpUnreacheableFilter.hpp"
+#include "SourcePort802_3Filter.hpp"
 #include "SourcePort.hpp"
 
 #include <gtest/gtest.h>
@@ -42,6 +43,15 @@ TEST(SourcePortFilterTests, appliedFilterToIcmpUnreachableLine)
     SourcePort sourcePortExpected(LineExamples::sourcePortLineIcmpUnreacheable);
     SourcePortIcmpUnreacheableFilter filter;
     SourcePort sourcePortActual = filter.apply(LineExamples::lineIcmpUnreacheable);
+
+    EXPECT_TRUE(sourcePortExpected==sourcePortActual);
+}
+
+TEST(SourcePortFilterTests, appliedFilterTo802_3Line)
+{
+    SourcePort sourcePortExpected(LineExamples::sourcePortLine802_3);
+    SourcePort802_3Filter filter;
+    SourcePort sourcePortActual = filter.apply(LineExamples::line802_3);
 
     EXPECT_TRUE(sourcePortExpected==sourcePortActual);
 }

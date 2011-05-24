@@ -1,12 +1,13 @@
-#include "DestinationIpFilter.hpp"
 
-#include <cstdio>
+#include "DestinationIpFilter.hpp"
 
 using namespace std;
 
 DestinationIp DestinationIpFilter::apply(const string line) const
 {
-    return DestinationIp(getDestinationIp(destinationFilter.getDestinationPartOfTheLine(line)));
+    string tmp1 = destinationFilter.getDestinationPartOfTheLine(line);
+    string tmp = getDestinationIp(tmp1);
+    return DestinationIp(tmp);
 }
 
 string DestinationIpFilter::getDestinationIp(const string line) const

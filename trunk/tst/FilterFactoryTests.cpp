@@ -60,6 +60,16 @@ TEST(FilterFactoryTests, getAndApplyDestionationIpFilterWithIcmpUnreacheableLine
     EXPECT_TRUE(destinationIpExpected == destinationIp);
 }
 
+TEST(FilterFactoryTests, getAndApplyDestionationIpFilterTo802_3Line)
+{
+    FilterFactory filterFactory;
+    DestinationIp destinationIpExpected(LineExamples::destinationIpLine802_3);
+    auto_ptr<DestinationIpFilter> destinationIpFilter(filterFactory.getDestinationIpFilter(LineExamples::line802_3));
+    DestinationIp destinationIp(destinationIpFilter->apply(LineExamples::line802_3));
+
+    EXPECT_TRUE(destinationIpExpected == destinationIp);
+}
+
 TEST(FilterFactoryTests, getAndApplyDestionationPortFilterWithDefaultLine)
 {
     FilterFactory filterFactory;
@@ -106,6 +116,16 @@ TEST(FilterFactoryTests, getAndApplyDestionationPortFilterWithIcmpUnreacheableLi
     DestinationPort destinationPortExpected(LineExamples::destinationPortLineIcmpUnreacheable);
     auto_ptr<DestinationPortFilter> destinationPortFilter(filterFactory.getDestinationPortFilter(LineExamples::lineIcmpUnreacheable));
     DestinationPort destinationPort(destinationPortFilter->apply(LineExamples::lineIcmpUnreacheable));
+
+    EXPECT_TRUE(destinationPortExpected == destinationPort);
+}
+
+TEST(FilterFactoryTests, getAndApplyDestionationPortFilterWith802_3Line)
+{
+    FilterFactory filterFactory;
+    DestinationPort destinationPortExpected(LineExamples::destinationPortLine802_3);
+    auto_ptr<DestinationPortFilter> destinationPortFilter(filterFactory.getDestinationPortFilter(LineExamples::line802_3));
+    DestinationPort destinationPort(destinationPortFilter->apply(LineExamples::line802_3));
 
     EXPECT_TRUE(destinationPortExpected == destinationPort);
 }
@@ -161,6 +181,16 @@ TEST(FilterFactoryTests, getAndApplySourceIpFilterWithIcmpUnreacheableLine)
     EXPECT_TRUE(sourceIpExpected == sourceIp);
 }
 
+TEST(FilterFactoryTests, getAndApplySourceIpFilterWith802_3Line)
+{
+    FilterFactory filterFactory;
+    SourceIp sourceIpExpected(LineExamples::sourceIpLine802_3);
+    auto_ptr<SourceIpFilter> sourceIpFilter(filterFactory.getSourceIpFilter(LineExamples::line802_3));
+    SourceIp sourceIp(sourceIpFilter->apply(LineExamples::line802_3));
+
+    EXPECT_TRUE(sourceIpExpected == sourceIp);
+}
+
 TEST(FilterFactoryTests, getAndApplySourcePortFilterWithDefaultLine)
 {
     FilterFactory filterFactory;
@@ -210,3 +240,16 @@ TEST(FilterFactoryTests, getAndApplySourcePortFilterWithIcmpUnreacheableLine)
 
     EXPECT_TRUE(sourcePortExpected == sourcePort);
 }
+
+TEST(FilterFactoryTests, getAndApplySourcePortFilterWith802_3Line)
+{
+    FilterFactory filterFactory;
+    SourcePort sourcePortExpected(LineExamples::sourcePortLine802_3);
+    auto_ptr<SourcePortFilter> sourcePortFilter(filterFactory.getSourcePortFilter(LineExamples::line802_3));
+    SourcePort sourcePort(sourcePortFilter->apply(LineExamples::line802_3));
+
+    EXPECT_TRUE(sourcePortExpected == sourcePort);
+}
+
+
+

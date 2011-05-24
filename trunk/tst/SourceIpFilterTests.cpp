@@ -3,6 +3,7 @@
 
 #include "SourceIpFilter.hpp"
 #include "SourceIpIcmpUnreacheableFilter.hpp"
+#include "SourceIp802_3Filter.hpp"
 #include "SourceIp.hpp"
 
 #include <gtest/gtest.h>
@@ -45,6 +46,17 @@ TEST(SourceIpFilterTests, appliedFilterToIcmpUnreachableLine)
 
     EXPECT_TRUE(sourceIpExpected==sourceIpActual);
 }
+
+TEST(SourceIpFilterTests, appliedFilterTo802_3Line)
+{
+    SourceIp sourceIpExpected(LineExamples::sourceIpLine802_3);
+    SourceIp802_3Filter filter;
+    SourceIp sourceIpActual = filter.apply(LineExamples::line802_3);
+
+    EXPECT_TRUE(sourceIpExpected==sourceIpActual);
+}
+
+
 
 
 

@@ -43,6 +43,10 @@ class LineExamples
         static const std::string sourceIpLineIcmpUnreacheable;
         static const std::string sourcePortLineIcmpUnreacheable;
         static const std::string line802_3;
+        static const std::string destinationIpLine802_3;
+        static const std::string destinationPortLine802_3;
+        static const std::string sourceIpLine802_3;
+        static const std::string sourcePortLine802_3;
 };
 
 #endif // LINEEXAMPLES_HPP_8QW7HEF8WHEF
