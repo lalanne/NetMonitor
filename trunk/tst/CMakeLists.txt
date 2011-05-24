@@ -58,6 +58,7 @@ SET(SOURCES
     ../src/PacketInformation.cpp
     ../src/TimeStamp.cpp
     ../src/FilterFactory.cpp
+    ../src/MyException.cpp
 )
 
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})

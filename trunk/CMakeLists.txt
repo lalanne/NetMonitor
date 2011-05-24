@@ -43,6 +43,7 @@ SET(SOURCES
     src/TransportInformation.cpp
     src/PacketInformation.cpp
     src/FilterFactory.cpp
+    src/MyException.cpp
 )
 
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})
