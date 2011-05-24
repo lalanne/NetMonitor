@@ -8,17 +8,15 @@ using namespace std;
 
 DestinationIp DestinationIpFilter::apply(const string line) const
 {
-    string tmp, tmp1;
     try
     {
-        tmp1 = destinationFilter.getDestinationPartOfTheLine(line);
-        tmp = getDestinationIp(tmp1);
+        string tmp = getDestinationIp(destinationFilter.getDestinationPartOfTheLine(line));
+        return DestinationIp(tmp);
     }
     catch(SymbolNotFoundException& e)
     {
-        cout<<e.what()<<endl;
+        return DestinationIp("");
     }
-    return DestinationIp(tmp);
 }
 
 string DestinationIpFilter::getDestinationIp(const string line) const

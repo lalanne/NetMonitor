@@ -8,17 +8,15 @@ using namespace std;
 
 DestinationPort DestinationPortFilter::apply(const string line)
 {
-    string tmp, tmp1;
     try
     {
-        tmp = destinationFilter.getDestinationPartOfTheLine(line);
-        tmp1 = destinationFilter.getDestinationIpAndPort(tmp);
+        string tmp = destinationFilter.getDestinationIpAndPort(destinationFilter.getDestinationPartOfTheLine(line));
+        return DestinationPort(getDestinationPort(tmp));
     }
     catch(SymbolNotFoundException& e)
     {
-        cout<<e.what()<<endl;
+        return DestinationPort("");
     }
-    return DestinationPort(getDestinationPort(tmp1));
 }
 
 string DestinationPortFilter::getDestinationPort(const string line) const
