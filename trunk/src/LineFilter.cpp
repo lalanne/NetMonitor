@@ -9,6 +9,5 @@ string LineFilter::extractLine(const string line) const
 
 string LineFilter::getTheStablePartOfTheLine(const string line) const
 {
-    const unsigned int found = line.find(":");
-    return line.substr(found);
+    return line.substr(line.find(":"));
 }

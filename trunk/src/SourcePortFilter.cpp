@@ -5,12 +5,10 @@ using namespace std;
 
 SourcePort SourcePortFilter::apply(const string line)
 {
-    string tmp = sourceFilter.getSourcePartOfTheLine(line);
-    return SourcePort(getSourcePort(tmp));
+    return SourcePort(getSourcePort(sourceFilter.getSourcePartOfTheLine(line)));
 }
 
 string SourcePortFilter::getSourcePort(const string line) const
 {
-    const unsigned int found = line.rfind(".");
-    return line.substr(found+1);
+    return line.substr(line.rfind(".")+1);
 }

@@ -5,21 +5,18 @@ using namespace std;
 
 string SourceFilter::getRawSourceAndDestinationPartOfTheLine(const string line) const
 {
-    const unsigned int found = line.find(" ");
-    return line.substr(found);
+    return line.substr(line.find(" "));
 }
 
 string SourceFilter::eraseTheFrontOfTheSourceAndDestinationPartOfTheLine(string line) const
 {
-    string::iterator it = line.begin();
-    line.erase(it);
+    line.erase(line.begin());
     return line;
 }
 
 string SourceFilter::getSourceIpAndPort(const string line) const
 {
-    const unsigned int found = line.find_first_of(" ");
-    return line.substr(0, (found));
+    return line.substr(0, (line.find_first_of(" ")));
 }
 
 string SourceFilter::getSourcePartOfTheLine(const string line) const

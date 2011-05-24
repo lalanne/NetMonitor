@@ -7,12 +7,10 @@ using namespace std;
 
 SourceIp SourceIpFilter::apply(const string line)
 {
-    string tmp = sourceFilter.getSourcePartOfTheLine(line);
-    return SourceIp(getSourceIp(tmp));
+    return SourceIp(getSourceIp(sourceFilter.getSourcePartOfTheLine(line)));
 }
 
 string SourceIpFilter::getSourceIp(const string line) const
 {
-    const unsigned int found = line.rfind(".");
-    return line.substr(0, found);
+    return line.substr(0, line.rfind("."));
 }
