@@ -15,7 +15,8 @@ DestinationPort DestinationPortFilter::apply(const string line)
     }
     catch(SymbolNotFoundException& e)
     {
-        return DestinationPort("");
+        string mockLine = "";
+        return DestinationPort(getDestinationPort(mockLine));
     }
 }
 

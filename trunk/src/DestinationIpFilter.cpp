@@ -15,7 +15,8 @@ DestinationIp DestinationIpFilter::apply(const string line) const
     }
     catch(SymbolNotFoundException& e)
     {
-        return DestinationIp("");
+        string mockLine = "";
+        return DestinationIp(getDestinationIp(mockLine));
     }
 }
 

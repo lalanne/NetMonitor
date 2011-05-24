@@ -14,8 +14,7 @@ string DestinationFilter::getRawDestinationPartOfTheLine(const string line) cons
     }
     else
     {
-        string tmp = line.substr(found);
-        return tmp;
+        return line.substr(found);
     }
 }
 
