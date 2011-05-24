@@ -8,7 +8,7 @@ string DestinationFilter::getRawDestinationPartOfTheLine(const string line) cons
     const unsigned int found = line.find(">");
     if(-1 == found)
     {
-        return "  erase this";
+        return "  fix this!!!!!!1";
     }
     else
     {
