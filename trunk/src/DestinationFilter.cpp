@@ -1,5 +1,6 @@
 
 #include "DestinationFilter.hpp"
+#include "SymbolNotFoundException.hpp"
 
 using namespace std;
 
@@ -8,7 +9,8 @@ string DestinationFilter::getRawDestinationPartOfTheLine(const string line) cons
     const unsigned int found = line.find(">");
     if(-1 == found)
     {
-        return "  fix this!!!!!!";
+        SymbolNotFoundException symbolNotFoundException;
+        throw symbolNotFoundException;
     }
     else
     {
@@ -31,9 +33,16 @@ string DestinationFilter::getDestinationIpAndPort(const string line) const
 
 string DestinationFilter::getDestinationPartOfTheLine(const string line) const
 {
-    string tmp = lineFilter.extractLine(line);
-    string tmp1 = lineFilter.getTheStablePartOfTheLine(tmp);
-    string tmp2 = getRawDestinationPartOfTheLine(tmp1);
-    string tmp3 = eraseTheFrontOfTheDestinationLine(tmp2);
-    return tmp3;
+    try
+    {
+        string tmp = lineFilter.extractLine(line);
+        string tmp1 = lineFilter.getTheStablePartOfTheLine(tmp);
+        string tmp2 = getRawDestinationPartOfTheLine(tmp1);
+        string tmp3 = eraseTheFrontOfTheDestinationLine(tmp2);
+        return tmp3;
+    }
+    catch(SymbolNotFoundException& e)
+    {
+        throw;
+    }
 }

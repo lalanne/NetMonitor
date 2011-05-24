@@ -1,13 +1,24 @@
 
 #include "DestinationPortFilter.hpp"
+#include "SymbolNotFoundException.hpp"
+
+#include <iostream>
 
 using namespace std;
 
 DestinationPort DestinationPortFilter::apply(const string line)
 {
-    string tmp = destinationFilter.getDestinationPartOfTheLine(line);
-    string tmp2 = destinationFilter.getDestinationIpAndPort(tmp);
-    return DestinationPort(getDestinationPort(tmp2));
+    string tmp, tmp1;
+    try
+    {
+        tmp = destinationFilter.getDestinationPartOfTheLine(line);
+        tmp1 = destinationFilter.getDestinationIpAndPort(tmp);
+    }
+    catch(SymbolNotFoundException& e)
+    {
+        cout<<e.what()<<endl;
+    }
+    return DestinationPort(getDestinationPort(tmp1));
 }
 
 string DestinationPortFilter::getDestinationPort(const string line) const
