@@ -45,6 +45,7 @@
 		<Unit filename="DestinationIpFilterTests.cpp" />
 		<Unit filename="DestinationPortFilterTests.cpp" />
 		<Unit filename="FileStorageTests.cpp" />
+		<Unit filename="FilterFactoryTests.cpp" />
 		<Unit filename="IPVersionFilterTests.cpp" />
 		<Unit filename="LinuxPipeTests.cpp" />
 		<Unit filename="PacketLenghtFilterTests.cpp" />

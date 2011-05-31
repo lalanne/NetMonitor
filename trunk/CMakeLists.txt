@@ -1,6 +1,8 @@
 
 SET(BINARY_NAME netMonitor)
 
+SET(BOOST_DIR "/usr/include/boost" CACHE STRING "Options: [$ENV{HOME}/boost")
+
 SET(SOURCES
     src/main.cpp
     src/Tcpdump.cpp
@@ -8,6 +10,7 @@ SET(SOURCES
     src/LinuxPipe.cpp
     src/GetStringFromStream.cpp
     src/ProcessOutput.cpp
+    src/ProcessOutputThread.cpp
     src/DateFilter.cpp
     src/Date.cpp
     src/TimeFilter.cpp
@@ -49,4 +52,6 @@ SET(SOURCES
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})
 
 INCLUDE_DIRECTORIES(include/)
+INCLUDE_DIRECTORIES(${BOOST_DIR/})
 
+TARGET_LINK_LIBRARIES(${BINARY_NAME} boost_thread)
