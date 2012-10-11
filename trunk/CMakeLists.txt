@@ -2,7 +2,10 @@ cmake_minimum_required(VERSION 2.8)
 
 SET(BINARY_NAME netMonitor)
 
-SET(BOOST_DIR "/usr/include/boost" CACHE STRING "Options: [$ENV{HOME}/boost")
+SET(BOOST_DIR_INCLUDE "/usr/include/boost" CACHE STRING "Options: [$ENV{HOME}/boost")
+SET(BOOST_DIR_LINK "/usr/include/boost" CACHE STRING "Options: [$ENV{HOME}/boost")
+
+LINK_DIRECTORIES(${BOOST_DIR_LINK}/)
 
 SET(SOURCES
     src/main.cpp
@@ -53,6 +56,11 @@ SET(SOURCES
 ADD_EXECUTABLE(${BINARY_NAME} ${SOURCES})
 
 INCLUDE_DIRECTORIES(include/)
-INCLUDE_DIRECTORIES(${BOOST_DIR}/)
+INCLUDE_DIRECTORIES(${BOOST_DIR_INCLUDE}/)
 
-TARGET_LINK_LIBRARIES(${BINARY_NAME} boost_thread)
+TARGET_LINK_LIBRARIES(${BINARY_NAME} boost_thread-mt)
+TARGET_LINK_LIBRARIES(${BINARY_NAME}  boost_system-mt)
+
+
+
+
