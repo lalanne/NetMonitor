@@ -17,7 +17,7 @@ TEST(FileStorageTests, open)
     storage.close();
 }
 
-TEST(FileStorageTests, writeValidRegister)
+/*TEST(FileStorageTests, writeValidRegister)
 {
     FileStorage storage(FILE_TEST);
     Register data(TimeStamp(Date(LineExamples::dateLine), Time(LineExamples::timeLine)),
@@ -30,4 +30,4 @@ TEST(FileStorageTests, writeValidRegister)
     Register lineRegister(data);
 
     EXPECT_NO_THROW(storage.write(lineRegister));
-}
+}*/
