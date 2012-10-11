@@ -3,7 +3,7 @@
 
 #include "ProcessOutput.hpp"
 
-#include <boost/thread.hpp>
+#include <boost/thread/thread.hpp>
 
 class ProcessOutputThread
 {
